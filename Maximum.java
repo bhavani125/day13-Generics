@@ -3,21 +3,22 @@ package com.max;
 public class Maximum {
     //main method
     public static void main(String[] args) {
-        String l = "apple";
-        String m = "peach";
-        String n = "banana";
-        findMaximum(l,m,n);
+        findMax(4,6,8);
+        findMax(1.1,1.2,1.3);
+        findMax("apple","peach","banana");
     }
 
-    //Creating method for findMaximum
-    private static void findMaximum(String l, String m, String n) {
-        String max = l;
-        if (m.compareTo(l)>0) {
-            max = m;
+    public static <E extends Comparable <E>> E findMax(E num1, E num2, E num3) {
+
+        E max = num1;
+        if (num2.compareTo(max) > 0) {
+            max = num2;
         }
-        if (n.compareTo(max)>0) {
-            max = n;
+        if (num3.compareTo(max) > 0) {
+            max = num3;
         }
-        System.out.println("Maximum of numbers are " +max);
+        System.out.printf("Maximum of numbers are " + max +"\n");
+        return max;
     }
+
 }
